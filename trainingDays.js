@@ -2,38 +2,38 @@
 const random = Math.floor(Math.random() * 3);
 
 const getRandEvent = () => {
-    if (random === 0) {
-        return 'Marathon';
-    } else if (random === 1) {
-        return 'Triathlon';
-    } else if (random === 2) {
-        return 'Pentathlon';
-    }
+  if (random === 0) {
+    return "Marathon";
+  } else if (random === 1) {
+    return "Triathlon";
+  } else if (random === 2) {
+    return "Pentathlon";
+  }
 };
 
 // The scope of `days` is too tight
-const getTrainingDays = event => {
+const getTrainingDays = (event) => {
+  let days;
+  if (event === "Marathon") {
+    days = 50;
+  } else if (event === "Triathlon") {
+    days = 100;
+  } else if (event === "Pentathlon") {
+    days = 200;
+  }
 
-    if (event === 'Marathon') {
-        let days = 50;
-    } else if (event === 'Triathlon') {
-        let days = 100;
-    } else if (event === 'Pentathlon') {
-        let days = 200;
-    }
-
-    return days;
+  return days;
 };
 
 // The scope of `name` is too tight
-const logEvent = event => {
-    const name = 'Nala';
-    console.log(`${name}'s event is: ${event}`);
+const logEvent = (event) => {
+  const name = "Nala";
+  console.log(`${name}'s event is: ${event}`);
 };
 
-const logTime = days => {
-    const name = 'Nala';
-    console.log(`${name}'s time to train is: ${days} days`);
+const logTime = (days) => {
+  const name = "Nala";
+  console.log(`${name}'s time to train is: ${days} days`);
 };
 
 const event = getRandEvent();
